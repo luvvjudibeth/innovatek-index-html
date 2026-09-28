@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innovatek Store - Plataforma Comercial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="#" class="brand-logo">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#302A50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+          <div class="brand-text">
+            <span>Innovatek</span>
+            <small>Tecnología al Crédito</small>
+          </div>
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#" class="active">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#sucursales">Sucursales</a>
+        <a href="#credito">KrediYa</a>
+        <a href="#contactenos">Contáctenos</a>
+      </nav>
+
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="searchTrigger" title="Buscar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <button class="btn-cta" id="contactBtn">
+          <span>Hablemos</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </button>
+
+        <button class="cart-btn" id="cartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA FLOTANTE -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="searchInput" placeholder="Buscar productos (ej. HP, Refrigerador, Inverter)...">
+      <button class="search-close" id="searchClose">&times;</button>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    
+    <!-- BANNER HERO GRID -->
+    <section class="hero-grid">
+      <!-- Tarjeta Izquierda (Morada) -->
+      <div class="hero-card hero-card-purple">
+        <div class="hero-purple-content">
+          <div class="tag-pill">
+            <span class="dot"></span> DESDE 2008 
+          </div>
+
+          <h1 class="hero-heading">
+            Conéctate con lo último,<br>
+            pagando a <br>
+            <span class="highlight-text">tu ritmo</span>
+          </h1>
+
+          <div class="hero-footer">
+            <a href="#catalogo" class="arrow-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+            <p class="hero-subtext">
+              Encuentras lo último en tecnología, electrodomésticos y entretenimiento a crédito fácil.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Derecho: Imagen Showcase y Tarjeta de Marcas -->
+      <div class="hero-right-column">
+        <!-- Tarjeta de Imagen -->
+        <div class="hero-card hero-card-image">
+          <img 
+            src="https://www.mielectro.es/blog/wp-content/uploads/2024/04/Electrodomesticos-inteligentes-Samsung.png" 
+            alt="Electrodomésticos Inteligentes Samsung" 
+            class="hero-img"
+          >
+          <div class="image-overlay"></div>
+          <div class="image-badge">
+            <span class="badge-dot"></span> Tecnología Samsung Smart Home
+          </div>
+        </div>
+
+        <!-- TARJETA DE MARCAS COMPACTA (SOLO LOGOS) -->
+        <div class="hero-card hero-card-brands">
+          <div class="brands-carousel-track">
+            <div class="brands-slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg" alt="Lenovo">
+              <img src="https://cdn.simpleicons.org/samsung/142890" alt="Samsung">
+            </div>
+            <!-- Duplicado para el bucle infinito -->
+            <div class="brands-slide" aria-hidden="true">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg" alt="Lenovo">
+              <img src="https://cdn.simpleicons.org/samsung/142890" alt="Samsung">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN Y FILTROS -->
+    <section class="category-nav">
+      <div class="category-pills">
+        <button class="pill-btn active" data-filter="all">Todos los Productos</button>
+        <button class="pill-btn" data-filter="computo">Cómputo & Laptops</button>
+        <button class="pill-btn" data-filter="linea-blanca">Línea Blanca</button>
+        <button class="pill-btn" data-filter="refrigeracion">Refrigeración</button>
+        <button class="pill-btn" data-filter="ofertas">Ofertas Destacadas</button>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section class="catalog-section" id="catalogo">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Nuestros Productos</h2>
+          <p class="section-subtitle">Tecnología de última generación con garantía local e instalación inmediata</p>
+        </div>
+        <div class="view-options">
+          <span class="results-count" id="resultsCount">Mostrando 3 productos</span>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        
+        <!-- PRODUCTO 1: LAPTOP -->
+        <article class="product-card" data-category="computo ofertas">
+          <span class="badge-discount">-20% DESCUENTO</span>
+          
+          <div class="product-image-container">
+            <img 
+              src="https://www.hp.com/content/dam/sites/worldwide/personal-computers/consumer/laptops-and-2-in-1s/omnibook-3-ai-pc/content@2x.png" 
+              alt="Laptop HP" 
+              style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            >
+          </div>
+
+          <div class="product-body">
+            <div class="product-meta">
+              <span class="category-name">Cómputo</span>
+              <span class="stock-status">En Stock</span>
+            </div>
+            <h3 class="product-title">Laptop HP 14" Intel N150</h3>
+            <p class="product-desc">4GB RAM • 128GB Storage UFS • Windows 11 Home Edition</p>
+            <div class="specs-tags">
+              <span>Intel N150</span>
+              <span>Ultra Delgado</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-container">
+                <span class="price-old">$349.99</span>
+                <span class="price-current">$279.99</span>
+              </div>
+              <button class="add-to-cart-btn" data-id="1" data-name="Laptop HP 14&quot; Intel N150" data-price="279.99">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Añadir</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 2: REFRIGERADOR TOP MOUNT -->
+        <article class="product-card" data-category="refrigeracion linea-blanca ofertas">
+          <span class="badge-discount">-21% DESCUENTO</span>
+          
+          <div class="product-image-container">
+            <img 
+              src="https://condesalatin.com/wp-content/uploads/2025/01/condesa-refrigerador-top-mount-13-cuft-CONDTM00508-vista-lateral-izquierdo.webp" 
+              alt="Refrigerador Condesa Top Mount 13 cuft" 
+              style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            >
+          </div>
+
+          <div class="product-body">
+            <div class="product-meta">
+              <span class="category-name">Línea Blanca</span>
+              <span class="stock-status">En Stock</span>
+            </div>
+            <h3 class="product-title">Refrigerador Top Mount 13 p³</h3>
+            <p class="product-desc">Sistema de enfriamiento Inverter con dispensador de agua exterior</p>
+            <div class="specs-tags">
+              <span>Dispensador</span>
+              <span>Inverter</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-container">
+                <span class="price-old">$699.99</span>
+                <span class="price-current">$549.99</span>
+              </div>
+              <button class="add-to-cart-btn" data-id="2" data-name="Refrigerador Top Mount 13 p³" data-price="549.99">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Añadir</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PRODUCTO 3: REFRIGERADOR 1P -->
+        <article class="product-card" data-category="refrigeracion linea-blanca">
+          <span class="badge-discount">-24% DESCUENTO</span>
+          
+          <div class="product-image-container">
+            <img 
+              src="https://i5.walmartimages.com/asr/85635930-6257-45f1-b3f1-5dae49152354.7e5f88a3a1e2ebcacc281e85ea7caad7.png" 
+              alt="Refrigerador 1P 6.3 p³ Acero Inox" 
+              style="max-width: 100%; max-height: 100%; object-fit: contain;"
+            >
+          </div>
+
+          <div class="product-body">
+            <div class="product-meta">
+              <span class="category-name">Línea Blanca</span>
+              <span class="stock-status">En Stock</span>
+            </div>
+            <h3 class="product-title">Refrigerador 1P 6.3 p³ Acero Inox</h3>
+            <p class="product-desc">Diseño compacto ideal para espacios eficientes con dispensador integrador</p>
+            <div class="specs-tags">
+              <span>Acero Inox</span>
+              <span>1 Puerta</span>
+            </div>
+            <div class="product-footer">
+              <div class="price-container">
+                <span class="price-old">$329.99</span>
+                <span class="price-current">$249.99</span>
+              </div>
+              <button class="add-to-cart-btn" data-id="3" data-name="Refrigerador 1P 6.3 p³ Acero Inox" data-price="249.99">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span>Añadir</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-text white">
+          <span>Innovatek</span>
+          <small>GRUPO</small>
+        </div>
+        <p>Plataforma comercial integrada con más de 17 años liderando el sector de retail, distribución y soluciones tecnológicas en Panamá y Costa Rica.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Empresas</h4>
+          <a href="#">Innovatek Retail</a>
+          <a href="#">Contact Center Services</a>
+          <a href="#">Red de Instalación</a>
+          <a href="#">Distribución Mayorista</a>
+        </div>
+        <div class="footer-col">
+          <h4>Soluciones</h4>
+          <a href="#">Venta Corporativa</a>
+          <a href="#">Logística & Fulfillment</a>
+          <a href="#">Garantías Extendidas</a>
+          <a href="#">Atención al Cliente</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <a href="#">Panamá & Costa Rica</a>
+          <a href="#">info@grupoinnovatek.com</a>
+          <a href="#">+507 800-0000</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Grupo Innovatek. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
